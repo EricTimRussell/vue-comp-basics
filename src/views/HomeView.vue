@@ -14,14 +14,14 @@
 
     <div class="edit">
       <h4>Edit counter tile:</h4>
-      <input v-model="counterData.title" type="text">
+      <input v-model="counterData.title" type="text" v-autofocus>
     </div>
   </div>
 </template>
 
 <script setup>
-import { reactive, computed, watch, onMounted } from "vue";
-
+import { reactive, computed, watch } from "vue";
+import { vAutofocus } from "@/directives/vAutofocus"
 
 const appTitle = "Counter App"
 
@@ -48,6 +48,7 @@ function increaseCounter(amount) {
 function decreaseCounter(amount) {
   counterData.count -= amount
 }
+
 
 </script>
 
