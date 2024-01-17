@@ -8,24 +8,20 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      counter: 0
-    }
-  },
-  methods: {
-    increaseCounter() {
-      this.counter++
-    },
-    decreaseCounter() {
-      this.counter--
-    }
-  }
-}
-</script>
+<script setup>
+import { ref } from "vue";
 
+const counter = ref(0)
+
+function increaseCounter() {
+  counter.value++
+}
+
+function decreaseCounter() {
+  counter.value--
+}
+
+</script>
 
 <style>
 .home{
