@@ -20,13 +20,19 @@
 </template>
 
 <script setup>
-import { reactive, computed } from "vue";
+import { reactive, computed, watch } from "vue";
 
 const appTitle = "Counter App"
 
 const counterData = reactive({
   count: 0,
   title: 'My Counter'
+})
+
+watch(() => counterData.count, (newCount) => {
+  if (newCount === 20) {
+    alert("You made it to 20!")
+  }
 })
 
 const oddOrEven = computed(() => {
