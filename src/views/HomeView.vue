@@ -20,7 +20,8 @@
 </template>
 
 <script setup>
-import { reactive, computed, watch } from "vue";
+import { reactive, computed, watch, onMounted } from "vue";
+
 
 const appTitle = "Counter App"
 
