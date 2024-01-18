@@ -1,9 +1,7 @@
 <template>
   <Teleport to="body">
     <div class="modal">
-      <h1>
-        <slot name="title" />
-      </h1>
+      <h1>{{ title }}</h1>
       <slot />
       <button>Hide Modal</button>
     </div>
@@ -11,6 +9,13 @@
 </template>
 
 <script setup>
+const props = defineProps({
+  title: {
+    type: String,
+    default: "No specified title"
+  }
+})
+
 
 </script>
 
