@@ -2,7 +2,7 @@
   <div class="modals">
     <h1>Modals</h1>
     <button @click="showModal = true">Show Modal</button>
-    <ModalComponent v-model="showModal" @hide-modal="showModal = false" title="My Modal Title via props">
+    <ModalComponent v-model="showModal" title="My Modal Title via props">
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis eius adipisci ipsam quam beatae placeat
         dignissimos praesentium totam vel cumque impedit, exercitationem tempore minima? Tempora deserunt temporibus
         ipsam
