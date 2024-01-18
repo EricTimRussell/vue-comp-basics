@@ -1,21 +1,27 @@
 <template>
   <Teleport to="body">
-    <div class="modal">
+    <div v-if="modelValue" class="modal">
       <h1>{{ title }}</h1>
       <slot />
-      <button>Hide Modal</button>
+      <button @click="$emit('hideModal')">Hide Modal</button>
     </div>
   </Teleport>
 </template>
 
 <script setup>
 const props = defineProps({
+  modelValue: {
+    type: Boolean,
+    default: false
+  },
   title: {
     type: String,
     default: "No specified title"
   }
 })
 
+// Tell parent componenet to set showModal to false
+const emit = defineEmits(['hideModal'])
 
 </script>
 
