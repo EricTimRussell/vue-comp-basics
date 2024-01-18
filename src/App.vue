@@ -3,10 +3,11 @@
     <nav>
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/posts">Posts</RouterLink>
+      <RouterLink to="/modals">Modals</RouterLink>
     </nav>
   </header>
 
-  <div>
+  <div class="view">
     <RouterView />
   </div>
 </template>
@@ -15,8 +16,14 @@
 header{
   display: flex;
   justify-content: center;
-  width: 100%
+  width: 100%;
 }
+.view{
+  display: flex;
+  grid-column: 1;
+  margin-top: 30px;
+}
+
 nav a.router-link-exact-active {
   color: var(--color-text);
 }
