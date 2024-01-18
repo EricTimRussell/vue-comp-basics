@@ -21,6 +21,7 @@ import { ref } from "vue";
 import ModalComponent from "@/components/ModalComponent.vue"
 import ModalDarkComponent from "@/components/ModalDarkComponent.vue"
 
+
 const showDarkModal = ref(false)
 const showModal = ref(false)
 

@@ -4,11 +4,16 @@
       <h1>{{ title }}</h1>
       <slot />
       <button @click="$emit('update:modelValue', false)">Hide Modal</button>
+      <div>
+        Username: {{ userData.username }}
+      </div>
     </div>
   </Teleport>
 </template>
 
 <script setup>
+import { inject } from "vue";
+
 const props = defineProps({
   modelValue: {
     type: Boolean,
@@ -22,6 +27,8 @@ const props = defineProps({
 
 // Tell parent component to close modal
 const emit = defineEmits(['update:modelValue'])
+
+const userData = inject('userData')
 
 </script>
 
