@@ -5,6 +5,9 @@
     <div>
       <button @click="showPostId">Show Post Id</button>
     </div>
+    <div>
+      <button @click="goHomeIn3Seconds">Go Home In Three Seconds</button>
+    </div>
     <span>
       <RouterLink to="/posts">&lt; Back</RouterLink>
     </span>
@@ -12,12 +15,19 @@
 </template>
 
 <script setup>
-import { useRoute } from "vue-router";
+import { RouterLink, useRoute, useRouter } from "vue-router";
 
 const route = useRoute()
+const router = useRouter()
 
 function showPostId() {
   alert(`The ID of this post is: ${route.params.id}`)
+}
+
+function goHomeIn3Seconds() {
+  setTimeout(() => {
+    router.push({ name: 'home' })
+  }, 3000);
 }
 
 
