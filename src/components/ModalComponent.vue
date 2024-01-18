@@ -1,11 +1,10 @@
 <template>
   <Teleport to="body">
     <div class="modal">
-      <h1>This is a modal</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis eius adipisci ipsam quam beatae placeat
-        dignissimos praesentium totam vel cumque impedit, exercitationem tempore minima? Tempora deserunt temporibus
-        ipsam
-        sint odit?</p>
+      <h1>
+        <slot name="title" />
+      </h1>
+      <slot />
       <button>Hide Modal</button>
     </div>
   </Teleport>
