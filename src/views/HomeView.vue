@@ -22,34 +22,13 @@
 </template>
 
 <script setup>
-import { reactive, computed, watch } from "vue";
+import { useCounter } from '@/use/useCounter'
 import { vAutofocus } from "@/directives/vAutofocus"
 
 const appTitle = "Counter App"
 
-const counterData = reactive({
-  count: 0,
-  title: 'My Counter'
-})
-
-watch(() => counterData.count, (newCount) => {
-  if (newCount === 20) {
-    alert("You made it to 20!")
-  }
-})
-
-const oddOrEven = computed(() => {
-  if (counterData.count % 2 === 0) return "even"
-  return "odd"
-})
-
-function increaseCounter(amount) {
-  counterData.count += amount
-}
-
-function decreaseCounter(amount) {
-  counterData.count -= amount
-}
+// use methods from useCounter composable
+const { counterData, oddOrEven, increaseCounter, decreaseCounter } = useCounter()
 
 
 </script>
