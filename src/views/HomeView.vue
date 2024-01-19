@@ -2,12 +2,12 @@
   <div class="home">
     <h2>{{ appTitle }}</h2>
 
-    <h3>Hard coded</h3>
+    <h3>{{ counter.title }}</h3>
 
     <div>
       <button class="btn">--</button>
       <button class="btn">-</button>
-      <span class="counter">0</span>
+      <span class="counter">{{ counter.count }}</span>
       <button class="btn">+</button>
       <button class="btn">++</button>
     </div>
@@ -23,9 +23,11 @@
 
 <script setup>
 import { vAutofocus } from "@/directives/vAutofocus"
+import { useCounterStore } from '@/stores/counter'
 
 const appTitle = "Counter App"
 
+const counter = useCounterStore()
 
 </script>
 
