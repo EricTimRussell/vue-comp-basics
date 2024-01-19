@@ -12,7 +12,7 @@
       <button @click="counter.increaseCounter(2)" class="btn">++</button>
     </div>
 
-    <p>This counter is odd/even</p>
+    <p>{{ counter.oddOrEven }}</p>
 
     <div class="edit">
       <h4>Edit counter tile:</h4>
